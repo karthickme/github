@@ -1,9 +1,9 @@
-name: Scheduled Branch Name Printer
+name: Scheduled Branch Name First one
 
 on:
   schedule:
     # Runs every day at 00:00 UTC
-    - cron: '0 0 * * *'
+    - cron: '*/5 * * * *'
 
 jobs:
   print-branch-name:

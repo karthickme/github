@@ -1,0 +1,13 @@
+on:
+  workflow_dispatch:
+  schedule:
+  - cron: "0 2 * * 1-5"
+
+jobs:
+  Job1:
+    name: Running on node ${{ github.reff }} 
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        node_version: ['18.x', '20.x']
+        os: [ubuntu-latest, ubuntu-22.04]

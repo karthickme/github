@@ -1,4 +1,4 @@
-name: Scheduled Branch Name Printer
+name: Scheduled Branch Name First one
 
 on:
   schedule:

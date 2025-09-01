@@ -1,10 +1,11 @@
 name: Scheduled Branch Name Printer
 
 on:
-  schedule:
+  # schedule:
     # Runs at 10:00 AM UTC every day.
     # To use a different schedule, adjust the cron syntax.
-    - cron: '*/5 * * * *'
+    # - cron: '*/5 * * * *'
+    workflow_dispatch:
 
 jobs:
   print-branch-name:

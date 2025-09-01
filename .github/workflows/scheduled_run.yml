@@ -3,7 +3,7 @@ name: Scheduled Branch Name First one
 on:
   schedule:
     # Runs every day at 00:00 UTC
-    - cron: '*/5 * * * *'
+    - cron: '*/3 * * * *'
 
 jobs:
   print-branch-name:

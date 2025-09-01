@@ -1,13 +1,17 @@
+name: Scheduled Branch Name Printer
+
 on:
-  workflow_dispatch:
   schedule:
-  - cron: "0 2 * * 1-5"
+    # Runs every day at 00:00 UTC
+    - cron: '0 0 * * *'
 
 jobs:
-  Job1:
-    name: Running on node ${{ github.reff }} 
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        node_version: ['18.x', '20.x']
-        os: [ubuntu-latest, ubuntu-22.04]
+  print-branch-name:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Print current branch name
+        run: |
+          echo "The current branch is: ${GITHUB_REF##*/}"

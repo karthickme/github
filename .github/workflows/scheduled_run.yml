@@ -12,6 +12,8 @@ jobs:
     steps:
       - uses: austenstone/schedule@v1.3
         with:
-          workflow: 'https://github.com/karthickme/github/blob/qa/.github/workflows/basic.yml'
+          workflow: 'basic.yml'
+          owner: 'karthickme'
+          repo: 'karthickme/github'
           ref: main
           wait-ms: 45000

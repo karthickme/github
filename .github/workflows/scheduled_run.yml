@@ -2,16 +2,18 @@ name: Scheduled Branch Name First one
 
 on:
   schedule:
-    # Runs every day at 00:00 UTC
     - cron: '*/3 * * * *'
+  workflow_dispatch:
 
 jobs:
-  print-branch-name:
+  schedule:
+    name: 📅 Schedule
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Print current branch name
-        run: |
-          echo "The current branch is: ${{ github.ref }}"
+      - uses: austenstone/schedule@v1.3
+        with:
+          github-token: ${{ secrets.TOKEN }}
+          date: ${{ github.event.inputs.date }}
+          workflow: 'basic.yml'
+          ref: main
+          wait-ms: 45000

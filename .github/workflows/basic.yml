@@ -2,6 +2,7 @@ name: Print Branch Name
 
 on:
   workflow_call:
+  workflow_dispatch:
 
 jobs:
   print-branch:

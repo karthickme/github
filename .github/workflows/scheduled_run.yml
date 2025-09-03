@@ -12,8 +12,6 @@ jobs:
     steps:
       - uses: austenstone/schedule@v1.3
         with:
-          github-token: ${{ secrets.TOKEN }}
-          date: ${{ github.event.inputs.date }}
           workflow: 'basic.yml'
           ref: main
           wait-ms: 45000

@@ -1,19 +1,1 @@
-name: Scheduled Branch Name First one
 
-on:
-  schedule:
-    - cron: '*/3 * * * *'
-  workflow_dispatch:
-
-jobs:
-  schedule:
-    name: 📅 Schedule
-    runs-on: ubuntu-latest
-    steps:
-      - uses: austenstone/schedule@v1.3
-        with:
-          workflow: 'basic.yml'
-          owner: 'karthickme'
-          repo: 'karthickme/github'
-          ref: main
-          wait-ms: 45000

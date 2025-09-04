@@ -1,17 +1,1 @@
-name: Scheduled Branch Name First one
 
-on:
-  schedule:
-    # Runs every day at 00:00 UTC
-    - cron: '*/3 * * * *'
-
-jobs:
-  print-branch-name:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Print current branch name
-        run: |
-          echo "The current branch is: ${{ github.ref }}"
